@@ -5,23 +5,10 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-
-import com.myassignment.pageObjectRepository.BingSearchPage;
-import com.myassignment.pageObjectRepository.GoogleSearchPage;
-import com.myassignment.pageObjectRepository.YahooSearchPage;
-
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 
 public class BrowserInitialization {
 	public static WebDriver driver;
@@ -51,14 +38,14 @@ public class BrowserInitialization {
 	}
 	
 	
-	@BeforeTest
+	
 	public WebDriver launchBrowser(String url) throws IOException {
 		driver = InitializeDriver();
 		driver.get(url);
 		return driver;
 	}
 		
-	@AfterTest
+
 	public void closeBrowser()
 	{
 
