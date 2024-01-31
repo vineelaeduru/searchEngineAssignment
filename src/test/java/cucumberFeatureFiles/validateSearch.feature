@@ -5,7 +5,7 @@ Feature: Search Engine Test
  
     Given I navigate to <search_engine_name> search page
     When I enter "<search_string>" in the "<search_engine_name>" textbox
-  	And I click on the search button in the "<search_engine_name>" page
+  	 And I click on the search button in the "<search_engine_name>" page
    	Then verify the "<search_engine_name>" search results return "<search_string>"
 
     Examples: 
