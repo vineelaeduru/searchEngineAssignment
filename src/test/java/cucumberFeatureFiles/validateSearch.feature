@@ -12,7 +12,7 @@ Feature: Search Engine Test
       #------------------------------------------#
       | search_engine_name  |    search_string   |
       #------------------------------------------#
-      | 			  google 	   		  |   QA Automation    |
-      | 		  	yahoo			       |     Selenium       |
-      |			    bing          |     08817          |
-      | 			   bing			       |   iPhone 15 Pro    |
+      | 			  google 	 	  |   QA Automation    |
+      | 		  	yahoo			  |     Selenium       |
+      |			    bing        |     08817          |
+      | 			   bing			  |   iPhone 15 Pro    |

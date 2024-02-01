@@ -30,23 +30,26 @@ public class YahooSearchPage extends AbstractComp {
 	@FindBy(css = "button#ybar-search")
 	WebElement searchBtn;
 
+	// Method to enter the search string into the search text box.
 	public void entrSrchKeyWord(String keyWord) {
-		
+
 		waitForElementToAppear(yLogo);
 		searchTxtBox.sendKeys(keyWord);
 
 	}
 
+	// Method to click on the search button.
 	public void clickSearchBtn() {
 
 		searchBtn.click();
 	}
-	
+
+	// Method to switch to new window when the search result page is opened in new
+	// tab.
 	public void switchToRsltPg() {
 		Set<String> tabs = driver.getWindowHandles();
 		Iterator<String> it = tabs.iterator();
-		//String srchPg = it.next();
-		String rsltPg=it.next();
+		String rsltPg = it.next();
 		driver.switchTo().window(rsltPg);
 	}
 

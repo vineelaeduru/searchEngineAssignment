@@ -1,9 +1,5 @@
 package com.myassignment.pageObjectRepository;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,9 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.myassignment.abstractComponents.AbstractComp;
 
-public class GoogleSearchPage extends AbstractComp{
-	
+public class GoogleSearchPage extends AbstractComp {
+
 	WebDriver driver;
+
 	public GoogleSearchPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 		super(driver);
@@ -21,28 +18,26 @@ public class GoogleSearchPage extends AbstractComp{
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//img[@alt='Google']")
+	@FindBy(xpath = "//img[@alt='Google']")
 	WebElement image;
-	
-	@FindBy(name="q")
+
+	@FindBy(name = "q")
 	WebElement searchTxtBox;
-	
-	@FindBy(xpath="//input[@value='Google Search']")
+
+	@FindBy(xpath = "//input[@value='Google Search']")
 	WebElement searchButton;
-	
+
+	// Method to enter the search string into the search text box.
 	public void entrSrchKeyWord(String keyWord) {
 
 		waitForElementToAppear(image);
 		searchTxtBox.sendKeys(keyWord);
-		
-		
-		
 	}
-	
+
+	// Method to click on the search button.
 	public void clickSearchBtn() {
-		
+
 		searchButton.click();
 	}
-	
-	
+
 }

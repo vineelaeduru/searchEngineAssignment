@@ -12,31 +12,35 @@ import com.myassignment.abstractComponents.AbstractComp;
 public class GoogleSrchResultPage extends AbstractComp {
 
 	WebDriver driver;
+
 	public GoogleSrchResultPage(WebDriver driver) {
 
 		super(driver);
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//img[@alt='Google']")
+
+	@FindBy(xpath = "//img[@alt='Google']")
 	WebElement gImg;
-	
-	@FindBy(name="q")
+
+	@FindBy(name = "q")
 	WebElement srchTB;
-	
-	@FindBy(xpath="//div[@class='yuRUbf'] //h3[contains(@class,'LC20lb')][1]")
+
+	@FindBy(xpath = "//div[@class='yuRUbf'] //h3[contains(@class,'LC20lb')][1]")
 	WebElement frstRR;
-	
-	
-	
+
+	// Method to verify the search string in the search text box in the search
+	// result page.
 	public void verifyStrInSrchTB(String srcStr) {
+
 		Assert.assertTrue(gImg.isDisplayed());
-	Assert.assertTrue(srchTB.getText().equals(srcStr));
-}
+		Assert.assertTrue(srchTB.getText().equals(srcStr));
+	}
+
+	// Method to assert the first result returned by the search engine.
 	public void verifyFirstSrchRslt(String srcStr) {
 		waitForElementToAppear(frstRR);
 		Assert.assertTrue(frstRR.getText().contains(srcStr));
 	}
-	
+
 }

@@ -12,46 +12,37 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserInitialization {
 	public static WebDriver driver;
-	
+
 	public WebDriver InitializeDriver() throws IOException {
-		
-		
-		//properties class
+
+		// properties class
 		Properties prop = new Properties();
-		FileInputStream fIS = new FileInputStream(System.getProperty("user.dir")
-				+ "\\src\\main\\resources\\GlobalData.properties");
+		FileInputStream fIS = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\main\\resources\\GlobalData.properties");
 		prop.load(fIS);
 		String browserName = prop.getProperty("browser");
-		if(browserName.contains("chrome")) {
-			driver = new ChromeDriver();	
+		if (browserName.contains("chrome")) {
+			driver = new ChromeDriver();
+		} else if (browserName.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browserName.equalsIgnoreCase("Edge")) {
+			driver = new EdgeDriver();
 		}
-		else if(browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();			 
-		}
-		else if(browserName.equalsIgnoreCase("Edge")) {
-			driver = new EdgeDriver();			 
-		}
-		
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return driver;
 	}
-	
-	
-	
+
 	public WebDriver launchBrowser(String url) throws IOException {
 		driver = InitializeDriver();
 		driver.get(url);
 		return driver;
 	}
-		
 
-	public void closeBrowser()
-	{
+	public void closeBrowser() {
 
 		driver.quit();
 	}
-	
-	
 
 }

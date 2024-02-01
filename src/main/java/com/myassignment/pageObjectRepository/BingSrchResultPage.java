@@ -12,28 +12,30 @@ import com.myassignment.abstractComponents.AbstractComp;
 public class BingSrchResultPage extends AbstractComp {
 
 	WebDriver driver;
+
 	public BingSrchResultPage(WebDriver driver) {
 
 		super(driver);
-		this.driver=driver;
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	@FindBy(name="q")
+
+	@FindBy(name = "q")
 	WebElement srchTB;
-	
-	@FindBy(xpath="//ol[@id='b_results'] //h2/a")
+
+	@FindBy(xpath = "//ol[@id='b_results'] //h2/a")
 	WebElement frstRR;
-	
-	
-	
+
+	// Method to verify the search string in the search text box in the search
+	// result page.
 	public void verifyStrInSrchTB(String srcStr) {
-	Assert.assertTrue(srchTB.getAttribute("value").equals(srcStr));
-}
+		Assert.assertTrue(srchTB.getAttribute("value").equals(srcStr));
+	}
+
+	// Method to assert the first result returned by the search engine.
 	public void verifyFirstSrchRslt(String srcStr) {
 		waitForElementToAppear(frstRR);
 		Assert.assertTrue(frstRR.getText().contains(srcStr));
 	}
-	
+
 }
