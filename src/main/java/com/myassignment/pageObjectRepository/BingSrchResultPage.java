@@ -29,11 +29,13 @@ public class BingSrchResultPage extends AbstractComp {
 	// Method to verify the search string in the search text box in the search
 	// result page.
 	public void verifyStrInSrchTB(String srcStr) {
+		
 		Assert.assertTrue(srchTB.getAttribute("value").equals(srcStr));
 	}
 
 	// Method to assert the first result returned by the search engine.
 	public void verifyFirstSrchRslt(String srcStr) {
+		
 		waitForElementToAppear(frstRR);
 		Assert.assertTrue(frstRR.getText().contains(srcStr));
 	}

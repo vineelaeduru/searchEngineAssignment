@@ -14,5 +14,5 @@ Feature: Search Engine Test
       #------------------------------------------#
       | 			  google 	 	  |   QA Automation    |
       | 		  	yahoo			  |     Selenium       |
-      |			    bing        |     08817          |
+      |			    google      |     08817          |
       | 			   bing			  |   iPhone 15 Pro    |

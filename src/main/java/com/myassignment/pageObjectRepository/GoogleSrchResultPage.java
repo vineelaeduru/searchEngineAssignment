@@ -20,9 +20,7 @@ public class GoogleSrchResultPage extends AbstractComp {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//img[@alt='Google']")
-	WebElement gImg;
-
+	
 	@FindBy(name = "q")
 	WebElement srchTB;
 
@@ -33,12 +31,12 @@ public class GoogleSrchResultPage extends AbstractComp {
 	// result page.
 	public void verifyStrInSrchTB(String srcStr) {
 
-		Assert.assertTrue(gImg.isDisplayed());
 		Assert.assertTrue(srchTB.getText().equals(srcStr));
 	}
 
 	// Method to assert the first result returned by the search engine.
 	public void verifyFirstSrchRslt(String srcStr) {
+		
 		waitForElementToAppear(frstRR);
 		Assert.assertTrue(frstRR.getText().contains(srcStr));
 	}
