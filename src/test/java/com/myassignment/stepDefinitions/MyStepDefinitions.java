@@ -70,7 +70,6 @@ public class MyStepDefinitions {
 		}
 		if (seName.equalsIgnoreCase("yahoo")) {
 			ySrch.clickSearchBtn();
-			ySrch.switchToRsltPg();
 		}
 		if (seName.equalsIgnoreCase("bing")) {
 			bSrch.clickSearchBtn();

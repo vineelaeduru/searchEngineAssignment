@@ -18,9 +18,7 @@ public class GoogleSearchPage extends AbstractComp {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//img[@alt='Google']")
-	WebElement image;
-
+	
 	@FindBy(name = "q")
 	WebElement searchTxtBox;
 
@@ -29,8 +27,7 @@ public class GoogleSearchPage extends AbstractComp {
 
 	// Method to enter the search string into the search text box.
 	public void entrSrchKeyWord(String keyWord) {
-
-		waitForElementToAppear(image);
+		
 		searchTxtBox.sendKeys(keyWord);
 	}
 
