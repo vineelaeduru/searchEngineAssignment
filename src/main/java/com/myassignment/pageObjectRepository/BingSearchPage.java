@@ -35,6 +35,7 @@ public class BingSearchPage extends AbstractComp {
 
 	// Method to click on the search button.
 	public void clickSearchBtn() {
+		
 		Actions a = new Actions(driver);
 		a.moveToElement(searchTxtBox).keyDown(Keys.ENTER).build().perform();
 

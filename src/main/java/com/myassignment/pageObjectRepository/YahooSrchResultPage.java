@@ -30,11 +30,14 @@ public class YahooSrchResultPage extends AbstractComp {
 	// result page.
 	public void verifyStrInSrchTB(String srcStr) {
 		Assert.assertTrue(srchTB.getAttribute("value").equals(srcStr));
+		
 	}
 
 	// Method to assert the first result returned by the search engine.
-	public void verifyFirstSrchRslt(String srcStr) {
+	public void verifyFirstSrchRslt(String srcStr){
+		
 		waitForElementToAppear(frstRR);
+		System.out.println("****************"+frstRR.getText()+"**************");
 		Assert.assertTrue(frstRR.getText().contains(srcStr));
 	}
 

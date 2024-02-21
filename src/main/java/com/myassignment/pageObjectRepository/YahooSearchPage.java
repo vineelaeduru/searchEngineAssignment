@@ -43,14 +43,5 @@ public class YahooSearchPage extends AbstractComp {
 
 		searchBtn.click();
 	}
-
-	// Method to switch to new window when the search result page is opened in new
-	// tab.
-	public void switchToRsltPg() {
-		Set<String> tabs = driver.getWindowHandles();
-		Iterator<String> it = tabs.iterator();
-		String rsltPg = it.next();
-		driver.switchTo().window(rsltPg);
-	}
-
+	
 }
