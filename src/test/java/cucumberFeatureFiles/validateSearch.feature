@@ -1,7 +1,7 @@
 Feature: Search Engine Test
 #----------- Test integrated with CI/CD Pipeline using Jenkins
 
-
+#Git and Jenkins Integrated for CI/CD Pipeline test
 @SearchTest
  Scenario Outline: Perform search operation using any keyword
  
